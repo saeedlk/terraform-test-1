@@ -1,4 +1,4 @@
-resource "aws_s3_bucket" "b" {
+resource "aws_s3_bucket" "my-bucket-lk" {
   bucket = "my-tf-test-bucket-lk"
 
   tags = {
@@ -6,7 +6,7 @@ resource "aws_s3_bucket" "b" {
   }
 }
 
-#resource "aws_s3_bucket_acl" "example" {
-#  bucket = aws_s3_bucket.b.id
-#  acl    = "private"
-#}
+resource "aws_s3_bucket_acl" "example" {
+  bucket = aws_s3_bucket.b.id
+  acl    = "private"
+}
